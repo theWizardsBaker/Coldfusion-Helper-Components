@@ -86,7 +86,7 @@ component output="false" displayname="soap"  {
 		//if the result returned successful, format the result
 		if(find('200', httpResult.statusCode)){
 			// find the body / response element of the XML
-			return formatSOAP(XMLSearch(httpResult.Filecontent, "//soapenv:Envelope/soapenv:Body/*:#action#__CompIntfc__#action#Response/*"));
+			return formatSOAP(XMLSearch(httpResult.Filecontent, "//soapenv:Envelope/soapenv:Body/*:#action#__CompIntfc__#componentInterface#Response/*"));
 		} else {
 			//else, return empty structure
 			return structNew();
